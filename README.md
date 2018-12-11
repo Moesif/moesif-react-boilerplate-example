@@ -22,7 +22,7 @@ You can follow these steps to add Moesif into your app based on react-boilerplat
 
   <script type="text/javascript">
     var options = {
-      applicationId: 'Your Moesif application id`
+      applicationId: 'Your Moesif application id'
       // add other option here.
     };
 
