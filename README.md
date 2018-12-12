@@ -83,3 +83,11 @@ moesif.init(options);
 // this starts the capturing of the data.
 moesif.start();
 ```
+
+## Note on [create-react-app](https://github.com/facebook/create-react-app)
+
+If you are using Facebook's `create-react-app` tool to setup your initial boilerplate code
+for a react app.
+
+For simple setup/integration with Moesif, The best place to initiate Moesif is inside.
+`/public/index.html`, which is the same as `app/index.html` of react boilerplate in this repo.
