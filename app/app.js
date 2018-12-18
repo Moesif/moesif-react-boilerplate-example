@@ -34,11 +34,11 @@ import { translationMessages } from './i18n';
 
 // Option 2 for moesif, add to the entry point for client side code.
 
-// import moesif from 'moesif-browser-js';
+// const moesif = require('moesif-browser-js');
 
 // const options = {
 //   applicationId:
-//     'your applicationId',
+//     'your moesif application id',
 //   // add other option here.
 // };
 

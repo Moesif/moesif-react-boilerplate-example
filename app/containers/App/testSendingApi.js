@@ -11,7 +11,7 @@ export default class TestSendingAPi extends React.Component {
         <div>
           {this.state.pastRequests.map((item, index) => (
             <div key={JSON.stringify(item)}>
-              <p>request {index}</p>
+              <p>request {index + 1}</p>
               <pre>{JSON.stringify(item)}</pre>
             </div>
           ))}
@@ -65,12 +65,12 @@ export default class TestSendingAPi extends React.Component {
               });
           }}
         >
-          Click to send an API request using SuperAgent to JSONPlaceHolder
+          Click to send an API request using SuperAgent to JSONPlaceHolder (/todos)
         </button>
         <button
           type="button"
           style={{
-            backgroundColor: '#4CAF50',
+            backgroundColor: '#FFAF50',
             border: 'none',
             color: 'white',
             padding: '15px 32px',
@@ -105,7 +105,67 @@ export default class TestSendingAPi extends React.Component {
               });
           }}
         >
-          Click to send an API request using axios to JSONPlaceHolder
+          Click to send an API request using axios to JSONPlaceHolder (/posts)
+        </button>
+
+        <button
+          type="button"
+          style={{
+            backgroundColor: '#BBAF50',
+            border: 'none',
+            color: 'white',
+            padding: '15px 32px',
+            textAlign: 'center',
+            textDecoration: 'none',
+            display: 'inline-block',
+            fontSize: '16px',
+          }}
+          onClick={() => {
+            const count =
+              this.state && this.state.pastRequests
+                ? this.state.pastRequests.length + 1
+                : 1;
+            fetch(`https://jsonplaceholder.typicode.com/albums/${count}`, {
+              headers: { abd: 'asdfasfads', foo: 'bar' },
+            })
+              .then(response => {
+                // console.log('normal usage scenario headers');
+                // for (var pair2 of response.headers.entries()) {
+                //   console.log(pair2);
+                //   // reqHeaders[pair2[0]] = pair2[1];
+                // }
+
+                // const secondResponse = response.clone();
+
+                // setTimeout(() => {
+                //   console.log('second json data after 10 seconds');
+                //   console.log('is body used read?');
+                //   console.log(secondResponse.bodyUsed);
+                //   secondResponse.json().then((data) => {
+                //     console.log(data);
+                //   });
+                // }, 10000);
+                return response.json();
+              })
+              .then(json => {
+                this.setState(
+                  prevState =>
+                    prevState && prevState.pastRequests
+                      ? { pastRequests: [...prevState.pastRequests, json] }
+                      : { pastRequests: [json] },
+                );
+              })
+              .catch(err => {
+                this.setState(
+                  prevState =>
+                    prevState && prevState.pastRequests
+                      ? { pastRequests: [...prevState.pastRequests, err] }
+                      : { pastRequests: [err] },
+                );
+              });
+          }}
+        >
+          Click to send an API request to JSONPlaceHolder (/albums) using fetch.
         </button>
         {pastSection}
         <br />
