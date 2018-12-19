@@ -34,19 +34,19 @@ import { translationMessages } from './i18n';
 
 // Option 2 for moesif, add to the entry point for client side code.
 
-// const moesif = require('moesif-browser-js');
+const moesif = require('moesif-browser-js');
 
-// const options = {
-//   applicationId:
-//     'your moesif application id',
-//   // add other option here.
-// };
+const options = {
+  applicationId:
+    'your application id goes here',
+  // add other option here.
+};
 
-// // if you setup server side rendering, you must do the following two method inside a componentDidMount
-// // lifecyle method of the most top level component.
-// moesif.init(options);
-// // this starts the capturing of the data.
-// moesif.start();
+// if you setup server side rendering, you must do the following two method inside a componentDidMount
+// lifecyle method of the most top level component.
+moesif.init(options);
+// this starts the capturing of the data.
+moesif.start();
 
 // Observe loading of Open Sans (to remove open sans, remove the <link> tag in
 // the index.html file and this observer)
