@@ -4,7 +4,7 @@
 [React Boilerplate](https://github.com/react-boilerplate/react-boilerplate) is a popular template for getting started quickly with a new
 single page app (SPA), it supports a lot of features.
 
-[Moesif](https://www.moesif.com) is an API analytics platform. [Moesif-browser-js](https://github.com/Moesif/moesif-browser-js) is a SDK that
+[Moesif](https://www.moesif.com) is an API analytics and monitoring platform. [Moesif-browser-js](https://github.com/Moesif/moesif-browser-js) is a SDK that
 allows you to capture all the API calls make by your Single Page App from inside the browser, and send to Moesif for analysis and tracking.
 
 This is an example with Moesif integrated.
@@ -34,8 +34,12 @@ You can follow these steps to add Moesif into your app based on react-boilerplat
   </script>
 
   ```
-  Of course, please obtain your Moesif Application Id from your Moesif account.
-  That is it.
+Your Moesif Application Id can be found in the [_Moesif Portal_](https://www.moesif.com/).
+After signing up for a Moesif account, your Moesif Application Id will be displayed during the onboarding steps. 
+
+You can always find your Moesif Application Id at any time by logging 
+into the [_Moesif Portal_](https://www.moesif.com/), click on the top right menu,
+and then clicking _Installation_.
 
 - Add a simple test component to verify API calls are captured. (Optional step)
   - Added `app/Containers/App/testSendingApi.js`
