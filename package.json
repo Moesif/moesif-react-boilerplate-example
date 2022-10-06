@@ -75,7 +75,7 @@
     "ip": "1.1.5",
     "loadable-components": "2.2.3",
     "lodash": "4.17.11",
-    "minimist": "1.2.0",
+    "minimist": "1.2.6",
     "moesif-browser-js": "^1.4.0",
     "prop-types": "15.6.2",
     "react": "16.6.0",
